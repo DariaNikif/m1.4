@@ -1,0 +1,283 @@
+@font-face {
+  font-family:"TT Lakes";
+  src: local("TT Lakes Medium"),
+  url("./fonts/TTLakes-Medium.woff") format("woff"),
+  url("./fonts/TTLakes-Medium.eot") format("embedded-opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family:"TT Lakes";
+  src: local("TT Lakes Bold"),
+  url("./fonts/TTLakes-Bold.woff") format("woff"),
+  url("./fonts/TTLakes-Bold.eot") format("embedded-opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ОБЩИЕ НАСТРОЙКИ */
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: #1B1C21;
+  font-family:"TT Lakes", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.2px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* БЛОК МЕНЮ ОБЩЕЕ */
+
+.sidebar__menu { 
+  width: 320px;
+  position: absolute;
+  height: 676px;
+  background-color: #FFF;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), 
+  -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+}
+
+/* КНОПКИ ОБЩЕЕ */
+
+button {
+  background-color: transparent;
+}
+
+/* ШАПКА */
+
+.sidebar-header__menu {
+padding: 18.73px 16px 0 16px;
+}
+
+.sidebar-header__menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header__menu-container-part1 {
+display: flex;
+flex-direction: row;
+gap: 16.73px;
+}
+
+.sidebar-header__menu-container-part2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar-header__menu-button {
+  margin-top: 5.73px;
+}
+
+/* НАВИГАЦИЯ */
+
+.sidebar-navigation {
+  margin:26px 0 24px 0;
+  padding: 0 16px 0 16px;
+}
+
+.sidebar-navigation__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: -16px;
+  gap: 10px;
+}
+
+.sidebar-navigation__item {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.sidebar-navigation__item:focus,
+.sidebar-navigation__item:hover {
+  content: "";
+  width: 4px;
+  background-color: #41F6D7;
+  border-radius: 0px 10px 10px 0px;
+  white-space: nowrap; 
+  transition: 0.2s ease-in-out;
+}
+
+.sidebar-navigation__link {
+  font-family: TT Lakes;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  padding: 0 0 0 16px;
+}
+
+.sidebar-navigation__link:focus,
+.sidebar-navigation__link:hover {
+  color: #7E7E82;
+  transition: 0.2s ease-in-out;
+}
+
+/* ПОДВАЛ */
+
+.sidebar-footer__info {
+  padding: 0 16px 32px 16px;
+}
+
+.sidebar-footer__menu-list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+  margin:16px 0 8px 0;
+}
+
+.footer__contact-number {
+  font-family: TT Lakes;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.footer__contact-mail:hover,
+.footer__contact-mail:focus,
+.footer__contact-number:focus,
+.footer__contact-number:hover {
+  color:#7E7E82;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.sidebar-footer__language-list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 7px;
+}
+
+.sidebar-footer__language-button--active {
+  color: #7E7E82;
+}
+
+.sidebar-footer__language-button:focus,
+.sidebar-footer__language-button:hover {
+  color:#7E7E82;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+/* АНИМАЦИЯ КНОПОК */
+/* Общее */
+.sidebar-footer__menu-button:focus,
+.sidebar-footer__menu-button:hover,
+.sidebar-header__menu-button:focus,
+.sidebar-header__menu-button:hover {
+  opacity: 0.6;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* ШАПКА */
+/* Кнопка закрытия */
+.sidebar-header__menu-button-burger--active:hover {
+  animation: close 0.7s linear 0.1s 1;
+}
+
+@keyframes close {
+  from {transform: scale(1) translate(0.0);}
+  50% {transform: scale(0.8) translate(5px,5px);}
+  to {transform: scale(1) translate(0.0);}
+}
+
+/* Кнопка поиск */
+.sidebar-header__menu-button-search--active:focus,
+.sidebar-header__menu-button-search--active:hover {
+  animation:search 0.7s ease-in 0.1s 1;
+}
+
+@keyframes search {
+  from {transform: scale(1) translate(0.0);}
+  50% {transform: scale(0.8) translate(5px,5px);}
+  to {transform: scale(1) translate(0.0);}
+}
+
+/* ПОДВАЛ */
+/* Кнопка Позвонить */
+.sidebar-footer__menu-button-call--active:focus,
+.sidebar-footer__menu-button-call--active:hover {
+  animation: call 0.6s 0.2s 1;
+}
+
+@keyframes call {
+  from {transform:rotate(0deg);}
+  20% {transform:rotate(20deg);}
+  40% {transform:rotate(-20deg);}
+  60% {transform:rotate(20deg);}
+  80% {transform:rotate(-20deg);}
+  to {transform:rotate(0deg);}
+}
+
+/* ИЗМЕНЕНИЯ ПРИ РАСШИРЕНИИ */
+
+@media (min-width: 360px) {
+
+  .sidebar-navigation {
+    margin-top: 24px;
+    padding: 0 24px 0 24px;
+  }
+
+  .sidebar-header__menu {
+    padding: 18.73px 24px 0 24px;
+  }
+
+  .sidebar-navigation__list {
+    margin-left: -24px;
+  }
+
+  .sidebar-navigation__link {
+    padding: 0 0 0 24px;
+  }
+
+  .sidebar-footer__info {
+    padding: 0 24px 32px 24px;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .sidebar__menu { 
+    height: 1024px;
+  }
+  .sidebar-header__menu {
+    padding: 18.73px 24px 0 24px;
+  }
+
+  .sidebar-navigation {
+    margin:50.27px 0 268px 0;
+  }
+
+  .sidebar-navigation__item {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .footer__contact {
+    margin-bottom:40px;
+  }
+
+}
